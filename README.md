@@ -4,7 +4,7 @@
 
 **Triangular arbitrage** (also referred to as **cross currency arbitrage** or **three-point arbitrage**) is the act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies in the foreign exchange market.
 
-**A triangular arbitrage strategy involves three currencies. In theory, if we have very low latency ordering platform with low bid-ask spread, the arbitrageur could lock in a zero-risk profit from the discrepancy between the market cross exchange rate is not aligned with the synthetic cross rate. **
+**A triangular arbitrage strategy involves three currencies. In theory, if we have very low latency ordering platform with low bid-ask spread, the arbitrageur could lock in a zero-risk profit from the discrepancy between the market cross exchange rate is not aligned with the synthetic cross rate.**
 
 Triangular arbitrage also applys to the digital currency market. In general, the exchange rates between digital currencies are related to their prices in dollars. However, due to the strong volatility of the digital currency market, in some exchanges with illiquidity and market impact, **the market price could be temporarily deviated from the  synthetic cross price. **When the profit from the deviation could offset the cost of trading, we could lock in a zero-risk profit by triangular arbitrage.
 
@@ -24,7 +24,11 @@ If the **market price of ETH/BTC** fluctuates at a certain momen:
 
 **bid price = 0.03800 BTC, ask price = 0.03900 BTC**.
 
-**![circle](circle.jpg)Advantages**：  
+![circle](circle.jpg) 
+
+
+
+**Advantages**：  
 
 1. Lesser impacts from the price fluctuation of the transaction target,  
 
