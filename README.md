@@ -4,7 +4,7 @@
 
 **Triangular arbitrage** (also referred to as **cross currency arbitrage** or **three-point arbitrage**) is the act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies in the foreign exchange market.
 
-**A triangular arbitrage strategy involves three currencies. In theory, if we have very low latency ordering platform with low bid-ask spread, the arbitrageur could lock in a zero-risk profit from the discrepancy between the market cross exchange rate is not aligned with the synthetic cross rate. **
+**A triangular arbitrage strategy involves three currencies. In theory, if we have very low latency ordering platform with low bid-ask spread, the arbitrageur could lock in a zero-risk profit from the discrepancy between the market cross exchange rate is not aligned with the synthetic cross rate.**
 
 Triangular arbitrage also applys to the digital currency market. In general, the exchange rates between digital currencies are related to their prices in dollars. However, due to the strong volatility of the digital currency market, in some exchanges with illiquidity and market impact, **the market price could be temporarily deviated from the  synthetic cross price. **When the profit from the deviation could offset the cost of trading, we could lock in a zero-risk profit by triangular arbitrage.
 
@@ -24,7 +24,11 @@ If the **market price of ETH/BTC** fluctuates at a certain momen:
 
 **bid price = 0.03800 BTC, ask price = 0.03900 BTC**.
 
-**![circle](circle.jpg)Advantages**：  
+![circle](circle.jpg) 
+
+
+
+**Advantages**：  
 
 1. Lesser impacts from the price fluctuation of the transaction target,  
 
@@ -39,7 +43,7 @@ If the **market price of ETH/BTC** fluctuates at a certain momen:
 3. There may be a risk that the arbitrage is not converted into a stable currency in time, and the price of the currency held will cause a loss,
 4. Major impact from the latency of transaction data and the order match system.
 
-**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks. **
+**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks.**
 
 **Notice: If you want to use the strategy in the actual environment to earn stable profits, we hope that you can make test adjustments in the sandbox environment with other parameters or strategies to enable you to achieve your goals. We also look forward to sharing your test data and Insights.**
 
