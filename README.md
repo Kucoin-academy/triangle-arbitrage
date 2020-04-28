@@ -43,7 +43,7 @@ If the **market price of ETH/BTC** fluctuates at a certain momen:
 3. There may be a risk that the arbitrage is not converted into a stable currency in time, and the price of the currency held will cause a loss,
 4. Major impact from the latency of transaction data and the order match system.
 
-**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks. **
+**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks.**
 
 **Notice: If you want to use the strategy in the actual environment to earn stable profits, we hope that you can make test adjustments in the sandbox environment with other parameters or strategies to enable you to achieve your goals. We also look forward to sharing your test data and Insights.**
 
