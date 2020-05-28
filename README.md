@@ -1,53 +1,49 @@
-# Triangular_arbitrage
+# 三角套利策略
 
-## Strategy description
+[![Logo](https://img.shields.io/badge/KuCoin-KuMex-yellowgreen?style=flat-square)](https://github.com/Kucoin-academy/Guide)
+[![GitHub stars](https://img.shields.io/github/stars/Kucoin-academy/triangle-arbitrage.svg?label=Stars&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage)
+[![GitHub forks](https://img.shields.io/github/forks/Kucoin-academy/triangle-arbitrage.svg?label=Fork&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage)
+[![GitHub issues](https://img.shields.io/github/issues/Kucoin-academy/triangle-arbitrage.svg?label=Issue&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage/issues)
 
-**Triangular arbitrage** (also referred to as **cross currency arbitrage** or **three-point arbitrage**) is the act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies in the foreign exchange market.
+[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README_EN.md)
+[![](https://img.shields.io/badge/lang-Chinese-red.svg?longCache=true&style=flat-square)](README_CN.md)
 
-**A triangular arbitrage strategy involves three currencies. In theory, if we have very low latency ordering platform with low bid-ask spread, the arbitrageur could lock in a zero-risk profit from the discrepancy between the market cross exchange rate is not aligned with the synthetic cross rate.**
+## 策略说明
 
-Triangular arbitrage also applys to the digital currency market. In general, the exchange rates between digital currencies are related to their prices in dollars. However, due to the strong volatility of the digital currency market, in some exchanges with illiquidity and market impact, **the market price could be temporarily deviated from the  synthetic cross price. **When the profit from the deviation could offset the cost of trading, we could lock in a zero-risk profit by triangular arbitrage.
+三角套利又叫间接套利或多边套利，起源于外汇市场中利用交叉汇率定价错误进行的套利。
 
-**Applications**: After an inequality exists between the market cross rate caused by the different fluctuations of different trading targets when the market has large fluctuations.
+**所谓三角套利，是一种引入三种货币的套利手段。它利用三种外汇对合理交叉汇率的暂时性偏离来实现套利。理论上，如果我们拥有很低延迟的下单平台，并且可以获得较低的买卖价差，那么我们有机会实现无风险套利**。
 
-**e.g.** : There are three trading pairs in the spot market **with no trading fee**: BTC / USDT, ETH / USDT, ETH / BTC .  
+三角套利在数字货币市场同样适用，通常情况下，数字货币之间的汇率与其相对应的美元价格相关。但由于数字货币市场波动性较强，部分交易所由于流动性不足等各种原因，会造成某些时刻，**合成交叉价格和市场价格的暂时偏离**，当这种偏离足够抵消我们的交易成本时，我们便可使用三角套利方法实现无风险利润。
 
-BTC/USDT: bid price = 9999 USDT, ask price =  10000 USDT,  
+**适用情况**：行情有较大波动时，不同交易标的涨跌幅不同导致的不同交易对之间的价格变动之后。
 
-ETH/USDT: bid price = 299 USDT, ask price =  300 USDT,  
+**举个例子**，现货市场现有这样三个交易对：BTC/USDT，ETH/USDT，ETH/BTC。
 
-ETH/BTC: bid price = 0.029901BTC, ask price = 0.03001 BTC. 
+假设前提是：市场中的手续费为零:  
 
-The synthetic cross price of ETH/BTC: bid price = 0.029902 BTC, ask price = 0.03000 BTC, calculated by the market prices of BTC/USDT and ETH/USDT which is almost identical with the market price of ETH/BTC.
+BTC/USDT买1 = 9999 USDT，卖1=10000 USDT；  
 
-If the **market price of ETH/BTC** fluctuates at a certain momen:   
+ETH/USDT买1 = 299 USDT，卖1 = 300 USDT；  
 
-**bid price = 0.03800 BTC, ask price = 0.03900 BTC**.
+ETH/BTC买1 = 0.029901 BTC，卖1 = BTC 0.03001 BTC。  
 
-![circle](circle.jpg) 
+我们根据BTC/USDT以及ETH/USDT的现价计算出ETH/BTC的现价，计算后得知ETH/BTC的理论买1 = 0.029902 BTC，卖1 = 0.03000 BTC，与市场现价基本吻合。  
 
+若某时刻价格出现波动，**ETH/BTC买1变为0.038 BTC，卖1变为0.039 BTC，另外两个交易对价格不变**。
 
+![circle_cn](./img/circle_cn.jpg)
 
-**Advantages**：  
+最终，所有盈亏均反映在USDT上，我们在市场行情的波动下，利用价差实现了三角套利。
 
-1. Lesser impacts from the price fluctuation of the transaction target,  
+**优势**：受交易标的价格涨跌影响较小，无行情剧烈变动导致的大额亏损，总体风险较小。
 
-2. No possibility of large loss caused by drastic market changes,  
+**劣势**：挂单变动导致价格滑点；交易存在手续费成本；可能存在套利后未及时兑换成稳定币，持有币种价格下跌导致亏损的风险；受交易数据延迟以及交易所订单撮合性能影响较大。
 
-3. Low overall risk.
+**此外，KuCoin拥有level3级别的交易数据、极优的撮合引擎，以及对api用户提供特别的手续费折扣，极大程度的减少了你在策略实施时的劣势，同时提供sandbox环境作为数据测试支撑，帮助你规避风险。**
 
-**Disadvantages**：  
+**请注意，任何策略在使用时需要做好风险管理，如果你想在实际环境中利用策略获得稳定的盈利，我们希望你能够在sandbox环境配合其他参数或是策略进行测试调整，以使你能够达到目的，我们也非常期待你能分享你的测试数据以及独到的见解。**
 
-1. Price slippage casued by the changes of orderbook,
-2. The cost of trading fee,
-3. There may be a risk that the arbitrage is not converted into a stable currency in time, and the price of the currency held will cause a loss,
-4. Major impact from the latency of transaction data and the order match system.
+**当然，如果这个过程中，你遇到任何问题需要帮助亦或是有赚钱的策略想要分享，请在ISSUE中反映，我们会努力及时响应。**
 
-**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks.**
-
-**Notice: All strategies require good risk management, if you want to use the strategy in the actual environment to earn stable profits, we hope that you can make test adjustments in the sandbox environment with other parameters or strategies to enable you to achieve your goals. We also look forward to sharing your test data and Insights.**
-
-**Surely, if you encounter any problems in this process, or you have a profitable strategy to share, please reflect in ISSUE, we will try to respond in a timely manner.**
-
-**If you are interested in this strategy, please click the star in the upper right corner, we will  measure the popularity of this strategy and subsequent optimization priorities based on the amounts of stars. You can also click watching in the upper right corner to continue to follow this project by receiving update notifications**.  
-
+**如果你对该策略有兴趣，请点击右上角star，我们会根据star个数来衡量策略的受欢迎程度和后续优化优先级，你也可以点击右上角watching通过接收更新通知来持续关注该项目**。

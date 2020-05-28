@@ -1,5 +1,13 @@
 # 三角套利策略
 
+[![Logo](https://img.shields.io/badge/KuCoin-KuMex-yellowgreen?style=flat-square)](https://github.com/Kucoin-academy/Guide)
+[![GitHub stars](https://img.shields.io/github/stars/Kucoin-academy/triangle-arbitrage.svg?label=Stars&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage)
+[![GitHub forks](https://img.shields.io/github/forks/Kucoin-academy/triangle-arbitrage.svg?label=Fork&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage)
+[![GitHub issues](https://img.shields.io/github/issues/Kucoin-academy/triangle-arbitrage.svg?label=Issue&style=flat-square)](https://github.com/Kucoin-academy/triangle-arbitrage/issues)
+
+[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README_EN.md)
+[![](https://img.shields.io/badge/lang-Chinese-red.svg?longCache=true&style=flat-square)](README_CN.md)
+
 ## 策略说明
 
 三角套利又叫间接套利或多边套利，起源于外汇市场中利用交叉汇率定价错误进行的套利。
@@ -24,7 +32,7 @@ ETH/BTC买1 = 0.029901 BTC，卖1 = BTC 0.03001 BTC。
 
 若某时刻价格出现波动，**ETH/BTC买1变为0.038 BTC，卖1变为0.039 BTC，另外两个交易对价格不变**。
 
-![circle_cn](circle_cn.jpg)
+![circle_cn](./img/circle_cn.jpg)
 
 最终，所有盈亏均反映在USDT上，我们在市场行情的波动下，利用价差实现了三角套利。
 
